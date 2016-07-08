@@ -47,6 +47,13 @@ resources:
             str_replace:
               template: |
                 #!/bin/bash
-                python chef_install.py $instance_name
+                sudo apt-get update
+                sudo apt-get install git python
+
+                git clone https://github.com/elicul/OpenStack.git
+
+                python OpenStack/chef_install.py $instance_name
               params:
                 $instance_name: { get_attr: [web_instances, name] }
+                $server_ip: {}
+                $worksation_ip: {}
