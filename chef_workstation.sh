@@ -8,8 +8,8 @@ chef verify
 git clone git://github.com/chef/chef-repo.git
 echo ".chef" >> ~/chef-repo/.gitignore
 
-scp opc@<chefserver name or IP>:~/admin.pem ~/chef-repo/.chef
-scp opc@<chefserver name or IP>:~/upi.pem ~/chef-repo/.chef
+scp opc@10.20.0.1:~/admin.pem ~/chef-repo/.chef
+scp opc@10.20.0.1:~/upi.pem ~/chef-repo/.chef
 
 cp ~/OpenStack/knife.rb ~/chef-repo/.chef/knife.rb
 sudo /opt/chef/embedded/bin/gem install knife-openstack
